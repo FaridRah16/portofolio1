@@ -6,6 +6,38 @@
     <title>Portofolio</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            background-color: #0ef;
+            color: white;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card.hide {
+            display: none;
+        }
+        </style>
+        
 </head>
 <body>
     <header class="header">
@@ -22,7 +54,6 @@
             <a href="#services">Services</a>
             <a href="#projects">Projects</a>
             <a href="#Certificate">Certificate</a>
-            <a href="#galery">Galery</a>
             <a href="#contact">Contact</a>
         </nav>
 
@@ -109,57 +140,59 @@
 
     <section class="projects" id="projects">
         <h1 class="heading">Projects</h1>
-
+    
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="game">Game</button>
+            <button class="filter-btn" data-filter="dashboard">Dashboard</button>
+        </div>
+    
         <div class="projects-box">
-            
-            <div class="project-card">
+            <div class="project-card" data-category="web">
                 <img src="image.png" alt="">
-
                 <h3>LOGIN FORM</h3>
                 <p>Login Form ini adalah sebuah project pertama dari pemograman web, yaitu membuat login yang responsive menggunakan HTML dan CSS </p>
                 <a href="https://vercel.live/link/login-ecru-six.vercel.app?via=project-dashboard-alias-list&p=1" class="btn">Review Project</a>
             </div>
-
-            <div class="project-card">
+    
+            <div class="project-card" data-category="web">
                 <img src="calc.png" alt="">
-                
                 <h3>Calculator</h3>
                 <p>Calculator ini adalah sebuah project kedua dari pemograman web, yaitu membuat Calculator yang dapat digunakan dan project ini menggunakan HTML,CSS,dan Javascript</p>
                 <a href="https://vercel.live/link/calculator-2-snowy.vercel.app?via=project-dashboard-alias-list&p=1" class="btn">Review Project</a>
             </div>
             
-            <div class="project-card">
+            <div class="project-card" data-category="game">
                 <img src="tetris.png" alt="">
-
                 <h3>Tetris Game</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati voluptas, numquam quis possimus odio ullam ratione culpa, sapiente animi maxime esse sequi repellendus eos veniam quam dicta doloribus aperiam autem.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati voluptas, numquam quis possimus odio ullam ratione culpa.</p>
                 <a href="https://tertris.vercel.app/" class="btn">Review Project</a>
             </div>
             
-            <div class="project-card">
+            <div class="project-card" data-category="dashboard">
                 <img src="dashboard.png" alt="">
-
                 <h3>Dashboard Admin</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati voluptas, numquam quis possimus odio ullam ratione culpa, sapiente animi maxime esse sequi repellendus eos veniam quam dicta doloribus aperiam autem.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati voluptas, numquam quis possimus odio ullam ratione culpa.</p>
                 <a href="https://dasboard-admin.vercel.app/" class="btn">Review Project</a>
             </div>
-
-            <div class="project-card">
+    
+            <div class="project-card" data-category="dashboard">
                 <img src="diagram.png" alt="">
-
                 <h3>Diagram Grafik</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati voluptas, numquam quis possimus odio ullam ratione culpa, sapiente animi maxime esse sequi repellendus eos veniam quam dicta doloribus aperiam autem.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati voluptas, numquam quis possimus odio ullam ratione culpa.</p>
                 <a href="/grafikdiagram/index.html" class="btn">Review Project</a>
             </div>
         </div>
     </section>
 
-    <section class="projects" id="Certificate">
+    <section class="certificate" id="Certificate">
         <h1 class="heading">CERTIFICATE</h1> 
 
-        <div class="projects-box">
+        <div class="certificate-box">
             
-            <div class="project-card">
+            <div class="certificate-card">
                 <img src="certifhtml.jpg" alt="">
 
                 <h3>Certificate Introduction HTML Sololearn</h3>
@@ -167,7 +200,7 @@
                 <a href="https://www.sololearn.com/certificates/CC-GGHXYO7D" class="btn">Review Certificate </a>
             </div>
 
-            <div class="project-card">
+            <div class="certificate-card">
                 <img src="certifcss.jpg" alt="">
                 
                 <h3>Certificate Introduction CSS Sololearn</h3>
@@ -175,7 +208,7 @@
                 <a href="https://www.sololearn.com/certificates/CC-EJNOAIXE" class="btn">Review Certificate</a>
             </div>
             
-            <div class="project-card">
+            <div class="certificate-card">
                 <img src="certifjava.jpg" alt="">
 
                 <h3>Certificate Introduction Javascript Sololearn</h3>
@@ -183,7 +216,7 @@
                 <a href="https://www.sololearn.com/certificates/CC-PFRXIMRL" class="btn">Review Certificate</a>
             </div>
             
-            <div class="project-card">
+            <div class="certificate-card">
                 <img src="intermediate java.jpg" alt="">
 
                 <h3>Certificate Intermediate Javascript Sololearn</h3>
@@ -267,5 +300,37 @@
         </p>
     </footer>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to setup filtering
+            function setupFilter(buttonClass, cardClass, containerClass) {
+                const filterButtons = document.querySelectorAll(buttonClass);
+                const cards = document.querySelectorAll(cardClass);
+        
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // Remove active class from all buttons in this section
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        // Add active class to clicked button
+                        button.classList.add('active');
+        
+                        const filterValue = button.getAttribute('data-filter');
+        
+                        cards.forEach(card => {
+                            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                                card.classList.remove('hide');
+                            } else {
+                                card.classList.add('hide');
+                            }
+                        });
+                    });
+                });
+            }
+        
+            // Setup filters for both sections independently
+            setupFilter('.filter-btn', '.project-card', '.projects-box');
+            setupFilter('.cert-filter-btn', '.certificate-card', '.certificate-box');
+        });
+        </script>
 </body>
 </html>
